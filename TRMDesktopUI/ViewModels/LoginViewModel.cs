@@ -1,16 +1,31 @@
 ﻿using Caliburn.Micro;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Media.Effects;
 using TRMDesktopUI.Helpers;
 
 namespace TRMDesktopUI.ViewModels
 {
     public class LoginViewModel : Screen
     {
+        private string errorMSG;
+
+        public string ErrorMsg
+        {
+            get { return errorMSG; }
+            set { 
+                errorMSG = value;
+                NotifyOfPropertyChange(() => ErrorMsg);
+                NotifyOfPropertyChange(() => IsErrorVisible);
+            }
+        }
+
+        public bool IsErrorVisible
+        {
+            get {
+                return errorMSG?.Length > 0;
+            }
+        }
+
         private string userName;
 
         public string UserName
@@ -45,7 +60,18 @@ namespace TRMDesktopUI.ViewModels
         }
         public async Task LogIn()
         {
-            await APIHelper.AuthenticateAsync(UserName, Password);
+            try
+            {
+                ErrorMsg = "Checking in Database";
+                 await APIHelper.AuthenticateAsync(UserName, Password);
+                ErrorMsg = "Logging In";
+            }
+            catch (Exception exc)
+            {
+                ErrorMsg = exc.Message.ToString();
+               
+            }
+           
         }
 
 

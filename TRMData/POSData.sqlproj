@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>TRMData</Name>
+    <Name>POSData</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{844f5a1b-16b8-4f18-9d37-dbc897d82f81}</ProjectGuid>
@@ -63,13 +63,11 @@
     <Folder Include="PublishLocation" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="PublishLocation\TRMData.publish.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Build Include="dbo\Tables\User.sql" />
     <Build Include="dbo\Tables\Sale.sql" />
     <Build Include="dbo\Tables\SaleDetail.sql" />
-    <Build Include="dbo\Tables\Product.sql" />
     <Build Include="dbo\Tables\Inventory.sql" />
+    <Build Include="dbo\StoredProcedure\spUserLookup.sql" />
+    <Build Include="dbo\Tables\Product.sql" />
   </ItemGroup>
 </Project>

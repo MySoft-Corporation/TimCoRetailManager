@@ -4,7 +4,7 @@ using System.Windows.Controls;
 
 namespace TRMDesktopUI.Helpers
 {
-    class PasswordBoxHelper
+    public class PasswordBoxHelper
     {
         public static readonly DependencyProperty BoundPasswordProperty =
         DependencyProperty.RegisterAttached("BoundPassword",

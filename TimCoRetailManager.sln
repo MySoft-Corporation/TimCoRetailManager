@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRMDataManager", "TRMDataManager\TRMDataManager.csproj", "{64E58978-E3C4-4BB6-BA81-E3B7B83C86CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSDataManager", "TRMDataManager\POSDataManager.csproj", "{64E58978-E3C4-4BB6-BA81-E3B7B83C86CD}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TRMData", "TRMData\TRMData.sqlproj", "{844F5A1B-16B8-4F18-9D37-DBC897D82F81}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "POSData", "TRMData\POSData.sqlproj", "{844F5A1B-16B8-4F18-9D37-DBC897D82F81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRMDesktopUI", "TRMDesktopUI\TRMDesktopUI.csproj", "{27D31CFF-9D3B-4901-8839-8E95F3BB2BC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSDesktopUI", "TRMDesktopUI\POSDesktopUI.csproj", "{27D31CFF-9D3B-4901-8839-8E95F3BB2BC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSDataManager.Library", "POSDataManager.Library\POSDataManager.Library.csproj", "{DAF25802-2141-41DD-809D-E41DEC878E94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{27D31CFF-9D3B-4901-8839-8E95F3BB2BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27D31CFF-9D3B-4901-8839-8E95F3BB2BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27D31CFF-9D3B-4901-8839-8E95F3BB2BC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAF25802-2141-41DD-809D-E41DEC878E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF25802-2141-41DD-809D-E41DEC878E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF25802-2141-41DD-809D-E41DEC878E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF25802-2141-41DD-809D-E41DEC878E94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
