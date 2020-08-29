@@ -1,12 +1,18 @@
 ﻿using Caliburn.Micro;
+using POSDesktopUI.Library.Api;
 using System;
 using System.Threading.Tasks;
-using TRMDesktopUI.Helpers;
+using TRMDesktopUI.Models;
 
 namespace TRMDesktopUI.ViewModels
 {
     public class LoginViewModel : Screen
     {
+        private IAPIHelper _APIHelper;
+        public LoginViewModel(IAPIHelper aPIHelper)
+        {
+            _APIHelper = aPIHelper;
+        }
         private string errorMSG;
 
         public string ErrorMsg
@@ -46,11 +52,7 @@ namespace TRMDesktopUI.ViewModels
                 NotifyOfPropertyChange(() => CanLogIn);
             }
         }
-        private IAPIHelper APIHelper;
-        public LoginViewModel(IAPIHelper aPIHelper)
-        {
-            APIHelper = aPIHelper;
-        }
+    
         public bool CanLogIn
         {
             get
@@ -62,9 +64,9 @@ namespace TRMDesktopUI.ViewModels
         {
             try
             {
-                ErrorMsg = "Checking in Database";
-                 await APIHelper.AuthenticateAsync(UserName, Password);
-                ErrorMsg = "Logging In";
+                AuthenticatedUser result = await _APIHelper.Authenticate(UserName, Password);
+                await _APIHelper.GetLoggedInUserInfo(result.access_token);
+          
             }
             catch (Exception exc)
             {

@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using POSDataManager.Library.DataAccess;
 using POSDataManager.Library.Models;
-using System.Collections.Generic;
-using System.Web;
+using System.Linq;
 using System.Web.Http;
 
 namespace POSDataManager.Controllers
@@ -11,11 +10,12 @@ namespace POSDataManager.Controllers
     [RoutePrefix("api/User")]
     public class UserController : ApiController
     {
-        public List<UserModel> GetById()
+        [HttpGet]
+        public UserModel GetById()
         {
             UserData userData = new UserData();
             string userId = RequestContext.Principal.Identity.GetUserId();
-            return userData.GetUserById(userId);
+            return userData.GetUserById(userId).First();
         }
     }
 }

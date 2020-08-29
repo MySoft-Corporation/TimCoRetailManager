@@ -8,7 +8,7 @@ namespace TRMDesktopUI.Models
 {
     public class AuthenticatedUser
     {
-        public string AccessToken { get; set; }
+        public string access_token { get; set; }
         public string UserName { get; set; }
     }
 }

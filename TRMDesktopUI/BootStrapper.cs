@@ -1,4 +1,6 @@
 ﻿using Caliburn.Micro;
+using POSDesktopUI.Library;
+using POSDesktopUI.Library.Api;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +29,8 @@ namespace TRMDesktopUI
             simpleContainer.Instance(simpleContainer);
             simpleContainer.Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
-                .Singleton<IAPIHelper, APIHelper>();
+                .Singleton<IAPIHelper, APIHelper>()
+                .Singleton<ILoggedInUserModel, LoggedInUserModel>();
 
             GetType().Assembly.GetTypes().Where(Type => Type.IsClass).Where(Type => Type.Name.EndsWith("ViewModel")).ToList().ForEach(viewModelType => simpleContainer.RegisterPerRequest(viewModelType, viewModelType.ToString(), viewModelType));
         }
